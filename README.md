@@ -120,10 +120,15 @@ Key visualizations generated:
 ### Overview of files in repository
 
 Data_Loading.ipynb	              Loads dataset and required libraries
+
 Data_Preprocessing.ipynb	        Cleans and formats data
+
 Baseline_Model.ipynb	            Baseline description generation
+
 LLM_Generated_Descriptions.ipynb	Runs LLM-based generation
+
 Comparison_Evaluation.ipynb	     Compares models using metrics
+
 Final_LLM_Generated.ipynb	       Full pipeline from data loading to evaluation
 
 
