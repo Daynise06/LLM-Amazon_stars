@@ -22,42 +22,72 @@ Our best binary model (TF-IDF + LinearSVC) achieved over 90% accuracy on a held-
 
 ## Summary of Workdone
 
-Include only the sections that are relevant an appropriate.
-
 ### Data
 
 * Data:
-  * Type: For example
-    * Input: medical images (1000x1000 pixel jpegs), CSV file: image filename -> diagnosis
-    * Input: CSV file of features, output: signal/background flag in 1st column.
-  * Size: How much data?
-  * Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
-
+  * Type: CSV of Amazon product reviews with fields such as:
+    * review (text of the review)
+    * star_rating (1–5 stars)
+    * Additional optional fields: review summary, product category, helpfulness votes
+  * Size: ~4,900 reviews after cleaning
+  * Splits:
+    * Multiclass: Train/Validation/Test = 80% / 20%
+    * Binary: Same split after removing 3-star “neutral” reviews
+ 
 #### Preprocessing / Clean up
 
-* Describe any manipulations you performed to the data.
+* Renamed columns (overall → star_rating, reviewText → review)
+* Dropped rows with missing or empty text
+* Clipped ratings to 1–5 range
+* Created binary sentiment label:
+  * Positive: 4–5 stars
+  * Negative: 1–2 stars
+  * Neutral (3 stars) removed from binary dataset
+
 
 #### Data Visualization
 
-Show a few visualization of the data and say a few words about what you see.
+Key visualizations generated:
+* Bar chart of star rating distribution
+* Pie chart of binary sentiment split
+* Histogram and violin plots of review lengths
+* Top unigrams/bigrams overall and by sentiment
+* Confusion matrices for binary and multiclass models
+* ROC curve for binary classifier
+* Word clouds for positive/negative reviews
+
+******
+
 
 ### Problem Formulation
 
 * Define:
-  * Input / Output
-  * Models
-    * Describe the different models you tried and why.
-  * Loss, Optimizer, other Hyperparameters.
-
+  * Input: Review text (optionally with product metadata)
+  * Output:
+    * Multiclass: 1–5 star rating
+    * Binary: Positive (4–5) or Negative (1–2)
+  * Models:
+    * TF-IDF + Logistic Regression (multiclass)
+    * TF-IDF + LinearSVC (binary)
+    * SentenceTransformer embeddings + Logistic Regression
+    * Pretrained nlptown/bert-base-multilingual-uncased-sentiment pipeline
+  * Metrics:
+   * Accuracy
+   * Macro F1-score
+ 
+  
 ### Training
 
 * Describe the training:
-  * How you trained: software and hardware.
-  * How did training take.
-  * Training curves (loss vs epoch for test/train).
-  * How did you decide to stop training.
-  * Any difficulties? How did you resolve them?
+  * Environment: Google Colab (CPU/GPU)
+  * Libraries: transformers, sentence-transformers, scikit-learn, pandas, numpy, matplotlib, seaborn
+  * Duration:
+    * Classical ML models: seconds
+    * Embedding-based models: minutes
+    * Pretrained LLM: minutes (depends on GPU availability)
+  * Early stopping determined by monitoring validation accuracy/F1
 
+ 
 ### Performance Comparison
 
 * Clearly define the key performance metric(s).
