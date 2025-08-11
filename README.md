@@ -56,6 +56,7 @@ Key visualizations generated:
 * ROC curve for binary classifier
 * Word clouds for positive/negative reviews
 
+![](star_bargraph.png)
 ![](cm_binary_tfidf_svc.png)
 ![](cm_multiclass_tfidf_lr.png)
 ![](roc_binary.png)
