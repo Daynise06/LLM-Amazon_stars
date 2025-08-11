@@ -56,7 +56,13 @@ Key visualizations generated:
 * ROC curve for binary classifier
 * Word clouds for positive/negative reviews
 
-******
+![](cm_binary_tfidf_svc.png)
+![](cm_multiclass_tfidf_lr.png)
+![](roc_binary.png)
+![](top_bigrams_overall.png)
+![](top_unigrams_neg.png)
+![](top_unigrams_overall.png)
+![](top_unigrams_pos.png)
 
 
 ### Problem Formulation
