@@ -1,0 +1,4 @@
+Multiclass — TF-IDF + LR: Accuracy=0.8026, Macro F1=0.2129
+Binary — TF-IDF + LinearSVC: Accuracy=0.9634, Macro F1=0.8136
+Multiclass — Embeddings + LR: Accuracy=0.8159, Macro F1=0.2739
+Binary — Embeddings + LR: Accuracy=0.9529, Macro F1=0.7508
