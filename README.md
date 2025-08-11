@@ -2,8 +2,8 @@
 
 # LLM-Amazon_stars
 
-* **One Sentence Summary** Ex: This repository holds an attempt to apply LSTMs to Stock Market using data from
-"Get Rich" Kaggle challenge (provide link). 
+* **One Sentence Summary** This repository holds an attempt to classify and predict product review sentiment and star ratings using the Amazon Product Reviews Dataset, leveraging both classical ML (TF-IDF + Logistic Regression) and LLM-based feature extraction.
+https://www.kaggle.com/datasets/gzdekzlkaya/amazon-product-reviews-dataset/data
 
 ## Overview
 
